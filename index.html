@@ -1,0 +1,35 @@
+<title>DTC Mentor Report</title>
+<style>
+  :root{
+    --paper: #EEEBE3; --paper-raised: #FAF8F3;
+    --ink: #211E1A; --ink-soft: #55504A; --ink-faint: #8A8478;
+    --line-strong: rgba(33,30,26,0.26);
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){ --paper:#17181A; --paper-raised:#1F2023; --ink:#ECE9E2; --ink-soft:#A8A39A; --ink-faint:#726C63; --line-strong:rgba(236,233,226,0.24); }
+  }
+  :root[data-theme="dark"]{ --paper:#17181A; --paper-raised:#1F2023; --ink:#ECE9E2; --ink-soft:#A8A39A; --ink-faint:#726C63; --line-strong:rgba(236,233,226,0.24); }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); line-height:1.6; }
+  .wrap{ max-width:560px; margin:0 auto; padding:80px 24px 100px; }
+  h1{ font-family:var(--serif); font-weight:600; font-size:30px; margin:0 0 6px; }
+  p.sub{ color:var(--ink-soft); font-size:14px; margin:0 0 44px; }
+  a.card{ display:flex; align-items:center; justify-content:space-between; text-decoration:none; color:var(--ink); background:var(--paper-raised); border:1px solid var(--line-strong); border-radius:8px; padding:20px 22px; margin:0 0 12px; }
+  a.card b{ font-size:16px; }
+  a.card small{ display:block; font-family:var(--mono); font-size:11px; color:var(--ink-faint); margin-top:3px; }
+  footer{ margin-top:48px; font-size:12px; color:var(--ink-faint); font-family:var(--mono); }
+</style>
+<div class="wrap">
+  <h1>DTC Mentor Report</h1>
+  <p class="sub">Portfólio unificado de criativos · 4 produtos · pra análise do mentor de Taboola</p>
+
+  <a class="card" href="linfaflow/index.html"><span><b>Linfaflow</b><small>advertorial + 10 ads imagem</small></span><span>→</span></a>
+  <a class="card" href="slimsoda/index.html"><span><b>SlimSoda</b><small>4 advertoriais + 8 ads imagem</small></span><span>→</span></a>
+  <a class="card" href="crowned/index.html"><span><b>Crowned</b><small>4 advertoriais + 8 ads imagem</small></span><span>→</span></a>
+  <a class="card" href="cardioclear/index.html"><span><b>CardioClear</b><small>VSL + métricas de afiliado</small></span><span>→</span></a>
+
+  <footer>Cada pasta é deployável separadamente no Netlify (subdomínio por produto)</footer>
+</div>

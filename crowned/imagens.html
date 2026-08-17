@@ -1,0 +1,302 @@
+<title>Crowned — Ads em Imagem</title>
+<style>
+  :root{
+    --paper: #EEEBE3; --paper-raised: #FAF8F3; --paper-sunken: #E4E0D6;
+    --ink: #211E1A; --ink-soft: #55504A; --ink-faint: #8A8478;
+    --accent: #8A6D3B; --gold: #9C6B1F; --good: #3C6E4A;
+    --line: rgba(33,30,26,0.14); --line-strong: rgba(33,30,26,0.26);
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#17181A; --paper-raised:#1F2023; --paper-sunken:#131415;
+      --ink:#ECE9E2; --ink-soft:#A8A39A; --ink-faint:#726C63;
+      --accent:#C9A25C; --gold:#D9A34E; --good:#6FAF80;
+      --line:rgba(236,233,226,0.14); --line-strong:rgba(236,233,226,0.24);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#17181A; --paper-raised:#1F2023; --paper-sunken:#131415;
+    --ink:#ECE9E2; --ink-soft:#A8A39A; --ink-faint:#726C63;
+    --accent:#C9A25C; --gold:#D9A34E; --good:#6FAF80;
+    --line:rgba(236,233,226,0.14); --line-strong:rgba(236,233,226,0.24);
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  .wrap{ max-width:920px; margin:0 auto; padding:40px 24px 100px; }
+
+  .topbar{ display:flex; align-items:center; justify-content:space-between; margin:0 0 36px; }
+  .back{ font-family:var(--mono); font-size:12px; text-decoration:none; color:var(--ink-soft); border:1px solid var(--line-strong); border-radius:99px; padding:7px 14px; }
+  .back:hover{ border-color:var(--accent); color:var(--accent); }
+  .doc-title{ font-family:var(--serif); font-weight:600; font-size:28px; margin:0; }
+
+  .grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:24px; }
+
+  .card{ border:1px solid var(--line-strong); border-radius:8px; background:var(--paper-raised); overflow:hidden; }
+  .card-head{ display:flex; align-items:center; justify-content:space-between; padding:12px 16px; background:var(--paper-sunken); border-bottom:1px solid var(--line); }
+  .card-head b{ font-family:var(--mono); font-size:12.5px; }
+  img.creative{ width:100%; aspect-ratio:3/4; object-fit:contain; display:block; background:var(--paper-sunken); }
+
+  .copy-controls{ display:flex; align-items:center; justify-content:space-between; gap:8px; padding:10px 16px; border-bottom:1px solid var(--line); }
+  .copy-btn{ font-family:var(--mono); font-size:11px; border:1px solid var(--line-strong); background:var(--paper-raised); color:var(--ink-soft); border-radius:99px; padding:6px 12px; cursor:pointer; display:inline-flex; align-items:center; gap:6px; }
+  .copy-btn:hover{ background:var(--accent); color:#fff; border-color:var(--accent); }
+  .copy-btn.done{ background:var(--good); color:#fff; border-color:var(--good); }
+  .copy-btn svg{ width:12px; height:12px; }
+  .lang-toggle{ font-family:var(--mono); font-size:11px; border:1px solid var(--line-strong); border-radius:99px; padding:4px 5px; display:flex; gap:2px; }
+  .lang-toggle button{ font-family:var(--mono); font-size:10.5px; border:0; background:transparent; color:var(--ink-faint); border-radius:99px; padding:3px 9px; cursor:pointer; }
+  .lang-toggle button.active{ background:var(--accent); color:#fff; }
+
+  .ptext{ padding:14px 16px; font-family:var(--mono); font-size:12px; line-height:1.7; max-height:220px; overflow-y:auto; }
+  .ptext p{ margin:0 0 9px; }
+  .ptext p:last-child{ margin-bottom:0; }
+  .ptext[data-lang="en"] .pt{ display:none; }
+  .ptext[data-lang="pt"] .en{ display:none; }
+
+  footer{ margin-top:56px; padding-top:20px; border-top:1px solid var(--line); font-size:12px; color:var(--ink-faint); font-family:var(--mono); text-align:center; }
+</style>
+
+<div class="wrap">
+  <div class="topbar">
+    <h1 class="doc-title">🖼️ Ads em Imagem</h1>
+    <a class="back" href="index.html">← Menu</a>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-head"><b>AD01</b></div>
+      <img class="creative" src="imagem/AD01.png" alt="AD01">
+      <div class="copy-controls">
+        <button type="button" class="copy-btn" data-copy><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span data-label>Copiar</span></button>
+        <div class="lang-toggle" data-toggle><button type="button" class="active" data-lang="en">EN</button><button type="button" data-lang="pt">PT</button></div>
+      </div>
+      <div class="ptext" data-lang="en">
+        <div class="en">
+          <p>If your hair started falling out in clumps after GLP-1, do this every morning if you don't want to go bald.</p>
+          <p>I'm Nina, 29. Within three weeks of stopping GLP-1, entire strands came out between my fingers. My dermatologist said "Telogen effluvium. Use minoxidil and be patient." I tried minoxidil, rosemary oil, biotin. Nothing.</p>
+          <p>At 2am I found a video about a "Morning Anti-Fall Ritual." A hormone attacks the follicles and spikes after sudden hormonal changes — menopause, postpartum, and stopping GLP-1. Everything I'd tried was treating the symptom, not the cause.</p>
+          <p>On day 9 I felt short hairs poking through. Today, 7 weeks in, my hair is fuller than it's been in 3 years.</p>
+          <p>Tap here while it's still available.</p>
+        </div>
+        <div class="pt">
+          <p>Se seu cabelo começou a cair em tufos depois do GLP-1, faça isso todas as manhãs se não quiser ficar careca.</p>
+          <p>Sou a Nina, 29 anos. Em três semanas parando o GLP-1, saíam mechas inteiras entre os dedos. A dermatologista disse "Eflúvio telógeno. Use minoxidil e tenha paciência." Tentei minoxidil, óleo de alecrim, biotina. Nada.</p>
+          <p>Às 2h da manhã achei um vídeo sobre um "Ritual Matinal Anti-Queda". Existe um hormônio que ataca os folículos depois de mudanças hormonais bruscas — menopausa, pós-parto e interrupção de GLP-1. Tudo que eu tentava tratava o sintoma, não a causa.</p>
+          <p>No dia 9 senti fios curtos nascendo. Hoje, 7 semanas depois, meu cabelo está mais cheio do que em 3 anos.</p>
+          <p>Toque aqui enquanto ainda está disponível.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><b>AD02</b></div>
+      <img class="creative" src="imagem/AD02.png" alt="AD02">
+      <div class="copy-controls">
+        <button type="button" class="copy-btn" data-copy><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span data-label>Copiar</span></button>
+        <div class="lang-toggle" data-toggle><button type="button" class="active" data-lang="en">EN</button><button type="button" data-lang="pt">PT</button></div>
+      </div>
+      <div class="ptext" data-lang="en">
+        <div class="en">
+          <p>If you're going bald after giving birth, do this Morning Anti-Fall Ritual for 30 days before it's too late…</p>
+          <p>I'm Jess, 31. Four months postpartum, pulling my hair back and seeing my scalp where there used to be a full head of hair. Prenatal vitamins, biotin gummies, a $45 shampoo — nothing worked.</p>
+          <p>A mom in a Facebook group shared an article: postpartum hormonal changes don't kill the follicles, they just put them to sleep. She started a Morning Anti-Fall Ritual and saw new hairs in under three weeks.</p>
+          <p>By the third week I felt short hairs poking through my hairline. It's been 6 weeks now — my hairline is filling back in.</p>
+          <p>I'm leaving the article right here. Read it while it's still available.</p>
+        </div>
+        <div class="pt">
+          <p>Se você está ficando careca depois do parto, faça esse Ritual Matinal Anti-Queda por 30 dias antes que seja tarde…</p>
+          <p>Eu sou a Jess, 31 anos. Quatro meses após o parto, puxando o cabelo pra trás e vendo o couro cabeludo onde antes havia uma cabeleira farta. Vitaminas pré-natais, gomas de biotina, um xampu de 45 dólares — nada funcionou.</p>
+          <p>Uma mãe num grupo do Facebook compartilhou um artigo: as mudanças hormonais do pós-parto não matam os folículos, só os colocam pra dormir. Ela começou o Ritual Matinal Anti-Queda e viu fios novos em menos de três semanas.</p>
+          <p>Na terceira semana senti fios curtinhos na linha do cabelo. Já se passaram 6 semanas — minha linha do cabelo está preenchendo de novo.</p>
+          <p>Vou deixar o artigo aqui. Leia enquanto ainda está disponível.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><b>AD03</b></div>
+      <img class="creative" src="imagem/AD03.png" alt="AD03">
+      <div class="copy-controls">
+        <button type="button" class="copy-btn" data-copy><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span data-label>Copiar</span></button>
+        <div class="lang-toggle" data-toggle><button type="button" class="active" data-lang="en">EN</button><button type="button" data-lang="pt">PT</button></div>
+      </div>
+      <div class="ptext" data-lang="en">
+        <div class="en">
+          <p>If your hair is falling out and your doctor keeps insisting your labs are "normal," read this.</p>
+          <p>I'm Megan, 37. My doctor ordered bloodwork — "within normal range." Told me to take biotin and relax. But there was a third marker, one no doctor ever checked against hair loss: the hair killing hormone.</p>
+          <p>It explained my oily scalp, the inflammation, why topical products never worked. I found an article with a step-by-step Morning Anti-Fall Ritual that stops that hormone from attacking the root.</p>
+          <p>Shedding slowed within weeks. By week six, new hairs along my hairline for the first time in over a year.</p>
+          <p>Tap below while the content is still available.</p>
+        </div>
+        <div class="pt">
+          <p>Se seu cabelo está caindo e seu médico insiste em dizer que seus exames estão "normais", leia isso.</p>
+          <p>Eu sou a Megan, 37 anos. Meu médico pediu exames — "dentro da normalidade". Disse pra eu tomar biotina e relaxar. Mas tinha um terceiro indicador que nenhum médico jamais checou com a queda de cabelo: o hair killing hormone.</p>
+          <p>Isso explicava meu couro cabeludo oleoso, a inflamação, por que produtos tópicos nunca funcionavam. Achei um artigo com o passo a passo do Ritual Matinal Anti-Queda que interrompe esse hormônio na raiz.</p>
+          <p>A queda diminuiu em semanas. Na sexta semana, fios novos nascendo na linha do cabelo pela primeira vez em mais de um ano.</p>
+          <p>Toque abaixo enquanto o conteúdo ainda está disponível.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><b>AD04</b></div>
+      <img class="creative" src="imagem/AD04.png" alt="AD04">
+      <div class="copy-controls">
+        <button type="button" class="copy-btn" data-copy><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span data-label>Copiar</span></button>
+        <div class="lang-toggle" data-toggle><button type="button" class="active" data-lang="en">EN</button><button type="button" data-lang="pt">PT</button></div>
+      </div>
+      <div class="ptext" data-lang="en">
+        <div class="en">
+          <p>This ritual was silenced after they started revealing the real root cause of hair loss after 40.</p>
+          <p>I'm Susan, 53. Menopause at 49 — hot flashes, insomnia, I expected all that. Losing my hair, I didn't. A dermatologist said "androgenetic alopecia, normal during menopause, use minoxidil." 5 months, dry scalp, thinner strands.</p>
+          <p>Everything I tried worked on the strand. Nothing touched the follicle, where the hair killing hormone (from testosterone) sends the signal to shrink.</p>
+          <p>My sister sent me an article about the Morning Anti-Fall Ritual — the opposite of everything I'd done. By week two, fewer strands. By week four, tiny hairs poking through.</p>
+          <p>Today it's been 2 months. The part closed up. The crown filled in.</p>
+        </div>
+        <div class="pt">
+          <p>Esse ritual foi silenciado depois que começaram a divulgar a verdadeira causa raiz da queda capilar depois dos 40.</p>
+          <p>Sou a Susan, 53 anos. Menopausa aos 49 — ondas de calor, insônia, tudo isso eu esperava. Perder o cabelo, não. Uma dermatologista disse "alopecia androgenética, normal na menopausa, use minoxidil." 5 meses, couro ressecado, fios cada vez mais finos.</p>
+          <p>Tudo que eu tentava agia no fio. Nada tocava o folículo, onde o hair killing hormone (vindo da testosterona) manda o sinal de encolher.</p>
+          <p>Minha irmã me mandou um artigo sobre o Ritual Matinal Anti-Queda — o oposto de tudo que eu tinha feito. Na segunda semana, menos fios. Na quarta, fiozinhos nascendo.</p>
+          <p>Hoje faz 2 meses. A risca fechou. A coroa preencheu.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><b>AD05</b></div>
+      <img class="creative" src="imagem/AD05.png" alt="AD05">
+      <div class="copy-controls">
+        <button type="button" class="copy-btn" data-copy><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span data-label>Copiar</span></button>
+        <div class="lang-toggle" data-toggle><button type="button" class="active" data-lang="en">EN</button><button type="button" data-lang="pt">PT</button></div>
+      </div>
+      <div class="ptext" data-lang="en">
+        <div class="en">
+          <p>I used minoxidil for eight months. Yes, I saw some hair grow. And the second I stopped, it started falling out again.</p>
+          <p>My sister sent me an article about the "Anti-Shed Morning Ritual." I laughed at her. But I read it, because I was desperate. Minoxidil doesn't address the real reason women lose hair after menopause and postpartum. The ritual does the opposite — it helps address the hormone that weakens follicles.</p>
+          <p>By the third day, fewer hairs on my pillow. A few weeks later, the bald spots were completely filled in. I never went back to minoxidil.</p>
+          <p>Read the article before it's gone. They keep taking it down, for obvious reasons.</p>
+        </div>
+        <div class="pt">
+          <p>Eu usei minoxidil por oito meses. Sim, vi alguns fios crescerem. E no segundo em que parei, começaram a cair de novo.</p>
+          <p>Minha irmã me mandou um artigo sobre o "Ritual Matinal Anti-Queda". Eu ri da cara dela. Mas li, porque estava desesperada. O minoxidil não combate o real motivo da queda depois da menopausa e do pós-parto. O ritual faz o oposto — ajuda a combater o hormônio que enfraquece os folículos.</p>
+          <p>No terceiro dia, menos fios no travesseiro. Semanas depois, as falhas preenchidas. Nunca mais voltei pro minoxidil.</p>
+          <p>Leia o artigo antes que ele saia do ar. Eles continuam tirando, por motivos óbvios.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><b>AD06</b></div>
+      <img class="creative" src="imagem/AD06.png" alt="AD06">
+      <div class="copy-controls">
+        <button type="button" class="copy-btn" data-copy><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span data-label>Copiar</span></button>
+        <div class="lang-toggle" data-toggle><button type="button" class="active" data-lang="en">EN</button><button type="button" data-lang="pt">PT</button></div>
+      </div>
+      <div class="ptext" data-lang="en">
+        <div class="en">
+          <p>Warning, the hair-killing hormone is thinning your hair and making it fall out at this very moment.</p>
+          <p>Around 45, estrogen crashes — and DHT, the hair-killing hormone, moves in. Think of it like crabgrass: it wraps around the root, cuts off blood and nutrients. Your hair isn't "thinning with age," it's being choked from below.</p>
+          <p>Hair vitamins can't block DHT. Neither can anti-hair-loss shampoo or minoxidil. Only the Anti-Shed Morning Ritual is scientifically proven to combat it at the root cause.</p>
+          <p>There's an article that explains exactly how to make it, in the correct order. Click and read it while DHT still hasn't had time to ruin your hair.</p>
+        </div>
+        <div class="pt">
+          <p>Atenção, o hormônio assassino de cabelo está afinando o seu cabelo e fazendo ele cair neste exato momento.</p>
+          <p>Por volta dos 45, o estrogênio despenca — e o DHT, o hormônio assassino de cabelo, entra no lugar. Pense nele como mato invasor: se enrola na raiz, corta sangue e nutrientes. Seu cabelo não está "afinando com a idade", está sendo sufocado por baixo.</p>
+          <p>Vitaminas capilares não bloqueiam o DHT. Nem shampoo antiqueda, nem minoxidil. Só o Ritual Matinal Anti-Queda é cientificamente comprovado pra combater na causa raiz.</p>
+          <p>Existe um artigo que explica exatamente como fazer, na ordem correta. Clique e leia enquanto o DHT ainda não teve tempo de destruir seu cabelo.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><b>AD07</b></div>
+      <img class="creative" src="imagem/AD07.png" alt="AD07">
+      <div class="copy-controls">
+        <button type="button" class="copy-btn" data-copy><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span data-label>Copiar</span></button>
+        <div class="lang-toggle" data-toggle><button type="button" class="active" data-lang="en">EN</button><button type="button" data-lang="pt">PT</button></div>
+      </div>
+      <div class="ptext" data-lang="en">
+        <div class="en">
+          <p>No, it is not normal for your hair to fall out in the shower. Sorry to give you the bad news, but you are simply losing more and more hair.</p>
+          <p>If your bathroom wall gets covered in hair, your brush has enough for a wig — that's the hair-killing hormone acting inside your body. Hair vitamins are Band-Aids. Shampoos don't solve it. Minoxidil only masks it.</p>
+          <p>The Anti-Shed Morning Ritual is the one thing that blocks it. Day 7, fewer strands on the floor. Day 14, clean bathroom wall. Day 27, my sister said my hair had grown so much.</p>
+          <p>You can click "Learn More" and read it, or let the hormone keep attacking until it turns into visible bald spots.</p>
+        </div>
+        <div class="pt">
+          <p>Não, não é normal o seu cabelo cair no banho. Desculpa te dar a má notícia, mas você está simplesmente perdendo cada vez mais cabelo.</p>
+          <p>Se a parede do banheiro fica coberta de fios, sua escova tem cabelo suficiente pra uma peruca — isso é o hormônio assassino de cabelo agindo no seu corpo. Vitaminas capilares são curativos. Shampoos não resolvem. Minoxidil só mascara.</p>
+          <p>O Ritual Matinal Anti-Queda é a única coisa que bloqueia. Dia 7, menos fios no chão. Dia 14, parede do banheiro limpa. Dia 27, minha irmã disse que meu cabelo tinha crescido muito.</p>
+          <p>Você pode clicar em "Saiba Mais" e ler, ou deixar o hormônio continuar atacando até virar falhas visíveis.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><b>AD08</b></div>
+      <img class="creative" src="imagem/AD08.png" alt="AD08">
+      <div class="copy-controls">
+        <button type="button" class="copy-btn" data-copy><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span data-label>Copiar</span></button>
+        <div class="lang-toggle" data-toggle><button type="button" class="active" data-lang="en">EN</button><button type="button" data-lang="pt">PT</button></div>
+      </div>
+      <div class="ptext" data-lang="en">
+        <div class="en">
+          <p>Whatever you do, these are the 3 things you should do to stop your hair from falling out and thinning even after menopause. The third one is the most important.</p>
+          <p>At 62, after menopause, my hair started falling like crazy. "It's just menopause," they said. "Use minoxidil" — but that lowers blood pressure and can cause tachycardia. Out of the question.</p>
+          <p>1) Keeping my hair dirty (harsh shampoos strip natural oils). 2) Stop using anti-hair-loss shampoo (saved me hundreds of dollars, doesn't reach the follicle anyway). 3) The Anti-Shed Morning Ritual, every day.</p>
+          <p>After 34 days, my husband asked if I was wearing a wig. Even my daughter, going through postpartum hair loss, tried it and it worked.</p>
+        </div>
+        <div class="pt">
+          <p>Faça o que fizer, essas são as 3 coisas que você deveria fazer pra parar a queda e o afinamento do cabelo mesmo depois da menopausa. A terceira é a mais importante.</p>
+          <p>Aos 62, depois da menopausa, meu cabelo começou a cair como nunca. "É só a menopausa," diziam. "Usa minoxidil" — mas isso abaixa a pressão e pode causar taquicardia. Fora de cogitação.</p>
+          <p>1) Manter o cabelo sujo (shampoos agressivos removem os óleos naturais). 2) Parar de usar shampoo antiqueda (economizei centenas de dólares, não chega no folículo mesmo assim). 3) O Ritual Matinal Anti-Queda, todo dia.</p>
+          <p>Depois de 34 dias, meu marido perguntou se eu estava usando peruca. Até minha filha, passando por queda pós-parto, testou e funcionou.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Crowned · 8 ads em imagem · <a href="index.html" style="color:inherit">voltar ao menu</a></footer>
+</div>
+
+<script>
+  document.querySelectorAll('[data-toggle]').forEach(function(toggle){
+    var card = toggle.closest('.card');
+    var body = card.querySelector('.ptext');
+    toggle.querySelectorAll('button').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        body.setAttribute('data-lang', btn.getAttribute('data-lang'));
+        toggle.querySelectorAll('button').forEach(function(b){ b.classList.toggle('active', b===btn); });
+      });
+    });
+  });
+  document.querySelectorAll('[data-copy]').forEach(function(copyBtn){
+    var card = copyBtn.closest('.card');
+    var body = card.querySelector('.ptext');
+    var label = copyBtn.querySelector('[data-label]');
+    copyBtn.addEventListener('click', function(){
+      var lang = body.getAttribute('data-lang') || 'en';
+      var block = body.querySelector('.' + lang);
+      var text = Array.prototype.map.call(block.querySelectorAll('p'), function(p){ return p.innerText.trim(); }).join('\n\n');
+      var done = function(){
+        copyBtn.classList.add('done');
+        var prev = label.textContent;
+        label.textContent = 'Copiado!';
+        setTimeout(function(){ copyBtn.classList.remove('done'); label.textContent = prev; }, 1600);
+      };
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(done).catch(function(){ fallbackCopy(text, done); });
+      } else { fallbackCopy(text, done); }
+    });
+  });
+  function fallbackCopy(text, done){
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.focus(); ta.select();
+    try{ document.execCommand('copy'); done(); }catch(e){}
+    document.body.removeChild(ta);
+  }
+</script>

@@ -1,0 +1,342 @@
+<title>Linfaflow — Ads em Imagem</title>
+<style>
+  :root{
+    --paper: #EEEBE3; --paper-raised: #FAF8F3; --paper-sunken: #E4E0D6;
+    --ink: #211E1A; --ink-soft: #55504A; --ink-faint: #8A8478;
+    --accent: #1F6F72; --gold: #17595C; --good: #3C6E4A;
+    --line: rgba(33,30,26,0.14); --line-strong: rgba(33,30,26,0.26);
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#17181A; --paper-raised:#1F2023; --paper-sunken:#131415;
+      --ink:#ECE9E2; --ink-soft:#A8A39A; --ink-faint:#726C63;
+      --accent:#5FBFC2; --gold:#6FD1D4; --good:#6FAF80;
+      --line:rgba(236,233,226,0.14); --line-strong:rgba(236,233,226,0.24);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#17181A; --paper-raised:#1F2023; --paper-sunken:#131415;
+    --ink:#ECE9E2; --ink-soft:#A8A39A; --ink-faint:#726C63;
+    --accent:#5FBFC2; --gold:#6FD1D4; --good:#6FAF80;
+    --line:rgba(236,233,226,0.14); --line-strong:rgba(236,233,226,0.24);
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  .wrap{ max-width:920px; margin:0 auto; padding:40px 24px 100px; }
+
+  .topbar{ display:flex; align-items:center; justify-content:space-between; margin:0 0 36px; }
+  .back{ font-family:var(--mono); font-size:12px; text-decoration:none; color:var(--ink-soft); border:1px solid var(--line-strong); border-radius:99px; padding:7px 14px; }
+  .back:hover{ border-color:var(--accent); color:var(--accent); }
+  .doc-title{ font-family:var(--serif); font-weight:600; font-size:28px; margin:0; }
+
+  .grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:24px; }
+
+  .card{ border:1px solid var(--line-strong); border-radius:8px; background:var(--paper-raised); overflow:hidden; }
+  .card.winner{ border-color:var(--gold); box-shadow:0 0 0 1px var(--gold); }
+  .card-head{ display:flex; align-items:center; justify-content:space-between; padding:12px 16px; background:var(--paper-sunken); border-bottom:1px solid var(--line); }
+  .card-head b{ font-family:var(--mono); font-size:12.5px; }
+  .card-head .badge{ font-family:var(--mono); font-size:10px; letter-spacing:.03em; background:var(--gold); color:#fff; border-radius:99px; padding:3px 8px; }
+  img.creative{ width:100%; aspect-ratio:3/4; object-fit:contain; display:block; background:var(--paper-sunken); }
+
+  .copy-controls{ display:flex; align-items:center; justify-content:space-between; gap:8px; padding:10px 16px; border-bottom:1px solid var(--line); }
+  .copy-btn{ font-family:var(--mono); font-size:11px; border:1px solid var(--line-strong); background:var(--paper-raised); color:var(--ink-soft); border-radius:99px; padding:6px 12px; cursor:pointer; display:inline-flex; align-items:center; gap:6px; }
+  .copy-btn:hover{ background:var(--accent); color:#fff; border-color:var(--accent); }
+  .copy-btn.done{ background:var(--good); color:#fff; border-color:var(--good); }
+  .copy-btn svg{ width:12px; height:12px; }
+  .lang-toggle{ font-family:var(--mono); font-size:11px; border:1px solid var(--line-strong); border-radius:99px; padding:4px 5px; display:flex; gap:2px; }
+  .lang-toggle button{ font-family:var(--mono); font-size:10.5px; border:0; background:transparent; color:var(--ink-faint); border-radius:99px; padding:3px 9px; cursor:pointer; }
+  .lang-toggle button.active{ background:var(--accent); color:#fff; }
+
+  .ptext{ padding:14px 16px; font-family:var(--mono); font-size:12px; line-height:1.7; max-height:220px; overflow-y:auto; }
+  .ptext p{ margin:0 0 9px; }
+  .ptext p:last-child{ margin-bottom:0; }
+  .ptext[data-lang="en"] .pt{ display:none; }
+  .ptext[data-lang="pt"] .en{ display:none; }
+
+  footer{ margin-top:56px; padding-top:20px; border-top:1px solid var(--line); font-size:12px; color:var(--ink-faint); font-family:var(--mono); text-align:center; }
+</style>
+
+<div class="wrap">
+  <div class="topbar">
+    <h1 class="doc-title">🖼️ Ads em Imagem</h1>
+    <a class="back" href="index.html">← Menu</a>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-head"><b>AD01</b></div>
+      <img class="creative" src="imagem/AD01.jpg" alt="AD01">
+      <div class="copy-controls">
+        <button type="button" class="copy-btn" data-copy><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span data-label>Copiar</span></button>
+        <div class="lang-toggle" data-toggle><button type="button" class="active" data-lang="en">EN</button><button type="button" data-lang="pt">PT</button></div>
+      </div>
+      <div class="ptext" data-lang="en">
+        <div class="en">
+          <p>I've been a vascular specialist for 19 years. Last year a 71-year-old physical therapist taught me more about swollen legs in 30 minutes than two decades of practice.</p>
+          <p>My own legs had ballooned. Compression, water pills, elevation — nothing worked. Then Dr. Costa pressed his thumb into my ankle: the dent stayed 8 seconds. "Normal fluid springs back in 1-2 seconds. That's not a leg problem, that's a deep drainage problem showing up in your legs."</p>
+          <p>He explained the body's second drainage system — clogged by sludge that compression, pills and massage never touch. Only a specific 4-extract liquid ritual, taken under the tongue, clears it in four stages.</p>
+          <p>Week 8: pitting test down from 8.2 to 2.1 seconds. Ankle circumference down 1.3 inches. I could see my ankle bone again.</p>
+        </div>
+        <div class="pt">
+          <p>Sou especialista vascular há 19 anos. No ano passado, um fisioterapeuta de 71 anos me ensinou mais sobre pernas inchadas em 30 minutos do que duas décadas de prática.</p>
+          <p>Minhas próprias pernas tinham inchado. Compressão, diuréticos, elevação — nada funcionava. Aí o Dr. Costa pressionou o polegar no meu tornozelo: a marca ficou 8 segundos. "Fluido normal volta em 1-2 segundos. Isso não é problema na perna, é um problema de drenagem profunda aparecendo na perna."</p>
+          <p>Ele explicou o segundo sistema de drenagem do corpo — entupido por uma "lama" que compressão, diuréticos e massagem nunca tocam. Só um ritual líquido específico de 4 extratos, sob a língua, limpa isso em quatro etapas.</p>
+          <p>Semana 8: teste de pressão caiu de 8,2 pra 2,1 segundos. Circunferência do tornozelo caiu 3,3 cm. Voltei a ver o osso do tornozelo.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><b>AD02</b></div>
+      <img class="creative" src="imagem/AD02.jpg" alt="AD02">
+      <div class="copy-controls">
+        <button type="button" class="copy-btn" data-copy><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span data-label>Copiar</span></button>
+        <div class="lang-toggle" data-toggle><button type="button" class="active" data-lang="en">EN</button><button type="button" data-lang="pt">PT</button></div>
+      </div>
+      <div class="ptext" data-lang="en">
+        <div class="en">
+          <p>My older sister had swollen legs. A heart attack took her seven months ago. She was 61. I have the same swelling, same daily water pill, same ankles that vanish by 5pm.</p>
+          <p>After the funeral I went looking for what actually took her. Chronic fluid backing up in the legs isn't just a leg problem — it's the body's second drain failing, and the strain lands on the heart and kidneys. The water pill never touches that drain.</p>
+          <p>I found a 30-second morning ritual: 4 plant extracts under the tongue that break down stalled fluid, sweep it out, activate circulation, and purify the blood.</p>
+          <p>Month 2 follow-up: blood pressure down 20 points, swelling better than in years. My doctor said, "keep doing what you're doing."</p>
+        </div>
+        <div class="pt">
+          <p>Minha irmã mais velha tinha as pernas inchadas. Um infarto a levou há sete meses. Ela tinha 61 anos. Eu tenho o mesmo inchaço, o mesmo diurético diário, os mesmos tornozelos que somem às 17h.</p>
+          <p>Depois do funeral, fui atrás do que realmente a matou. Fluido acumulado nas pernas por anos não é só um problema de perna — é o segundo dreno do corpo falhando, e a sobrecarga vai pro coração e pros rins. O diurético nunca toca esse dreno.</p>
+          <p>Achei um ritual matinal de 30 segundos: 4 extratos vegetais sob a língua que quebram o fluido parado, varrem pra fora, ativam a circulação e purificam o sangue.</p>
+          <p>Retorno no mês 2: pressão caiu 20 pontos, inchaço melhor do que em anos. Minha médica disse: "continue fazendo o que está fazendo."</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card winner">
+      <div class="card-head"><b>AD03</b> <span class="badge">🏆 Vencedor · P1</span></div>
+      <img class="creative" src="imagem/AD03.jpg" alt="AD03">
+      <div class="copy-controls">
+        <button type="button" class="copy-btn" data-copy><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span data-label>Copiar</span></button>
+        <div class="lang-toggle" data-toggle><button type="button" class="active" data-lang="en">EN</button><button type="button" data-lang="pt">PT</button></div>
+      </div>
+      <div class="ptext" data-lang="en">
+        <div class="en">
+          <p>My older sister had a routine vein surgery for her swollen legs. She died of a blood clot three weeks later. She was 59. Now the same surgeon wants to schedule me for the same operation.</p>
+          <p>I cancelled it. When the body's second drain is already sluggish, the weeks after leg surgery are the most dangerous window there is — the perfect conditions for a clot. Nobody warned Diane. Nobody warned me.</p>
+          <p>Instead of the knife, I found a 30-second morning ritual: 4 plant extracts that support the drain itself instead of cutting around it.</p>
+          <p>Month 2: my doctor took the surgery referral off the table. Month 4: legs steady all day, pressure in the low 120s, no surgery, just the drops.</p>
+        </div>
+        <div class="pt">
+          <p>Minha irmã mais velha fez uma cirurgia de varizes de rotina pras pernas inchadas. Morreu de um coágulo três semanas depois. Tinha 59 anos. Agora o mesmo cirurgião quer marcar a mesma operação pra mim.</p>
+          <p>Cancelei. Quando o segundo dreno do corpo já está lento, as semanas depois de uma cirurgia na perna são a janela mais perigosa que existe — condição perfeita pra um coágulo. Ninguém avisou a Diane. Ninguém me avisou.</p>
+          <p>Em vez do bisturi, achei um ritual matinal de 30 segundos: 4 extratos vegetais que sustentam o próprio dreno em vez de cortar ao redor dele.</p>
+          <p>Mês 2: minha médica tirou o encaminhamento cirúrgico da mesa. Mês 4: pernas estáveis o dia todo, pressão na faixa dos 120, sem cirurgia, só as gotas.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><b>AD04</b></div>
+      <img class="creative" src="imagem/AD04.jpg" alt="AD04">
+      <div class="copy-controls">
+        <button type="button" class="copy-btn" data-copy><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span data-label>Copiar</span></button>
+        <div class="lang-toggle" data-toggle><button type="button" class="active" data-lang="en">EN</button><button type="button" data-lang="pt">PT</button></div>
+      </div>
+      <div class="ptext" data-lang="en">
+        <div class="en">
+          <p>My nurse-practitioner daughter married into an Amish family in Lancaster County. At the wedding, the groom's 84-year-old great-grandmother stood up and said something my family hasn't forgiven her for.</p>
+          <p>"You are 58. I am 26 years older. When you arrived you braced your hand on my porch rail to stand. Somebody did that to you. It was not God, and it was not time." She told the story of a cousin who left the community, went on a water pill for years, and died at 62 — heart gave out, chart always "stable."</p>
+          <p>My daughter later explained: the water pill forces the kidneys to dump water, it never touches the drainage. Every Amish farmhouse keeps drainage botanicals the women take year-round — 4 plant extracts, drops under the tongue before coffee.</p>
+          <p>Month 4: 33 pounds of fluid weight gone, pressure in the low 120s, ankles steady, wedding ring fits again.</p>
+        </div>
+        <div class="pt">
+          <p>Minha filha, enfermeira, casou com uma família Amish em Lancaster County. No casamento, a bisavó do noivo, 84 anos, se levantou e disse algo que minha família ainda não perdoou.</p>
+          <p>"Você tem 58. Eu tenho 26 anos a mais. Quando você chegou, se apoiou no meu corrimão pra ficar de pé. Alguém fez isso com você. Não foi Deus, e não foi o tempo." Ela contou a história de uma prima que saiu da comunidade, tomou diurético por anos e morreu aos 62 — coração parou, exames sempre "estáveis".</p>
+          <p>Minha filha depois explicou: o diurético força os rins a eliminar água, nunca toca a drenagem. Toda fazenda Amish mantém botânicos de drenagem que as mulheres tomam o ano todo — 4 extratos vegetais, gotas sob a língua antes do café.</p>
+          <p>Mês 4: 15 kg de retenção de líquido eliminados, pressão na faixa dos 120, tornozelos estáveis, aliança de casamento voltou a servir.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><b>AD05</b></div>
+      <img class="creative" src="imagem/AD05.jpg" alt="AD05">
+      <div class="copy-controls">
+        <button type="button" class="copy-btn" data-copy><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span data-label>Copiar</span></button>
+        <div class="lang-toggle" data-toggle><button type="button" class="active" data-lang="en">EN</button><button type="button" data-lang="pt">PT</button></div>
+      </div>
+      <div class="ptext" data-lang="en">
+        <div class="en">
+          <p>My daughter moved trapped fluid out of a sponge better than a prescription water pill. She's 11. It was a science fair project — 5 sponges, 5 liquids. The water pill sponge stayed heavy overnight. One sponge drained almost dry.</p>
+          <p>The judge was a retired vascular nurse of 31 years. Her hands were shaking. "A water pill doesn't move fluid out of the tissue, it just forces the kidneys to dump water from the blood. That's why ankles come back by evening no matter how many pills you take."</p>
+          <p>Cup five, the one that drained, was a cold-pressed extract I take every morning — 4 plant extracts that support the body's second drain instead of forcing the kidneys.</p>
+          <p>My numbers 8 months in: pressure 122/80, ankles normal all day, the swelling that defined my evenings for years — gone.</p>
+        </div>
+        <div class="pt">
+          <p>Minha filha tirou mais fluido preso de uma esponja do que um diurético prescrito. Ela tem 11 anos. Foi um projeto de feira de ciências — 5 esponjas, 5 líquidos. A esponja com o diurético continuou encharcada de manhã. Uma esponja quase secou.</p>
+          <p>A juíza era uma enfermeira vascular aposentada com 31 anos de carreira. As mãos dela tremiam. "Um diurético não tira fluido do tecido, só força os rins a eliminar água do sangue. Por isso os tornozelos voltam a inchar à noite, não importa quantos comprimidos você tome."</p>
+          <p>O copo cinco, o que drenou, era um extrato prensado a frio que tomo todo dia — 4 extratos vegetais que sustentam o segundo dreno do corpo em vez de forçar os rins.</p>
+          <p>Meus números depois de 8 meses: pressão 122/80, tornozelos normais o dia todo, o inchaço que definia minhas noites por anos — sumiu.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><b>AD06</b></div>
+      <img class="creative" src="imagem/AD06.jpg" alt="AD06">
+      <div class="copy-controls">
+        <button type="button" class="copy-btn" data-copy><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span data-label>Copiar</span></button>
+        <div class="lang-toggle" data-toggle><button type="button" class="active" data-lang="en">EN</button><button type="button" data-lang="pt">PT</button></div>
+      </div>
+      <div class="ptext" data-lang="en">
+        <div class="en">
+          <p>I Refused a Second Water Pill for 3 Years. Here's What Happened to My Swollen Legs. I've been a nurse for 30 years — Evelyn, 67, "stable" chart, 18 years on a water pill, died buying cantaloupe.</p>
+          <p>My own ankles started going. My doctor offered a second pill. I refused and started researching why Amish women in Lancaster County almost never get chronic leg swelling — a fraction of the surrounding counties.</p>
+          <p>The old books named 4 botanicals the modern research keeps landing on: Stillingia Root, Cleavers, Prickly Ash Bark, Red Clover — cold-processed, in sequence, not heat-dried dust like drugstore versions.</p>
+          <p>Week 10: pressure 120/78, down from 146/92. Resting heart rate down from 84 to 67. My doctor: "Whatever you're doing, keep doing it."</p>
+        </div>
+        <div class="pt">
+          <p>Recusei um segundo diurético por 3 anos. Veja o que aconteceu com minhas pernas inchadas. Sou enfermeira há 30 anos — Evelyn, 67 anos, exames "estáveis", 18 anos de diurético, morreu comprando melão no mercado.</p>
+          <p>Meus próprios tornozelos começaram a inchar. Minha médica ofereceu um segundo comprimido. Recusei e comecei a pesquisar por que as mulheres Amish de Lancaster County quase nunca têm inchaço crônico nas pernas — uma fração dos condados vizinhos.</p>
+          <p>Os livros antigos citavam 4 botânicos que a pesquisa moderna também aponta: Raiz de Stillingia, Cleavers, Casca de Prickly Ash, Trevo Vermelho — processados a frio, em sequência, não o pó ressecado por calor dos suplementos de farmácia.</p>
+          <p>Semana 10: pressão 120/78, caindo de 146/92. Frequência cardíaca de repouso caiu de 84 pra 67. Minha médica: "O que você está fazendo, continue fazendo."</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><b>AD07</b></div>
+      <img class="creative" src="imagem/AD07.jpg" alt="AD07">
+      <div class="copy-controls">
+        <button type="button" class="copy-btn" data-copy><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span data-label>Copiar</span></button>
+        <div class="lang-toggle" data-toggle><button type="button" class="active" data-lang="en">EN</button><button type="button" data-lang="pt">PT</button></div>
+      </div>
+      <div class="ptext" data-lang="en">
+        <div class="en">
+          <p>I read a statistic that made me sick: chronic leg swelling that goes unmanaged is one of the most overlooked warning signs of heart trouble in women. My mother had it for 18 years, a heart attack took her at 62.</p>
+          <p>I'm 58, same swelling since 47. My doctor offered a second pill and a heart workup. I refused and found the same answer that turned my mother's story around too late: the water pill masks the heaviness, so you move less, and less movement drains the strength that holds you up as you age.</p>
+          <p>I found a 30-second morning ritual — 4 plant extracts under the tongue that support the drainage instead of masking it.</p>
+          <p>Week 4: walked a full block, no rail, no furniture to grab. Month 2: no second pill, no workup. I carry my own groceries now.</p>
+        </div>
+        <div class="pt">
+          <p>Li uma estatística que me deixou mal: inchaço crônico nas pernas sem tratamento é um dos sinais de alerta mais ignorados de problema cardíaco em mulheres. Minha mãe teve isso por 18 anos, um infarto a levou aos 62.</p>
+          <p>Tenho 58 anos, mesmo inchaço desde os 47. Minha médica ofereceu um segundo comprimido e uma bateria de exames do coração. Recusei e encontrei a resposta que chegou tarde demais pra minha mãe: o diurético mascara o peso nas pernas, então você se movimenta menos, e menos movimento drena a força que sustenta você com a idade.</p>
+          <p>Encontrei um ritual matinal de 30 segundos — 4 extratos vegetais sob a língua que sustentam a drenagem em vez de mascará-la.</p>
+          <p>Semana 4: caminhei um quarteirão inteiro, sem corrimão, sem me apoiar em móveis. Mês 2: sem segundo comprimido, sem bateria de exames. Hoje carrego minhas próprias compras.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><b>AD08</b></div>
+      <img class="creative" src="imagem/AD08.jpg" alt="AD08">
+      <div class="copy-controls">
+        <button type="button" class="copy-btn" data-copy><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span data-label>Copiar</span></button>
+        <div class="lang-toggle" data-toggle><button type="button" class="active" data-lang="en">EN</button><button type="button" data-lang="pt">PT</button></div>
+      </div>
+      <div class="ptext" data-lang="en">
+        <div class="en">
+          <p>I'm a lymphatic therapist. 12 years. You cannot drain a leg from the outside for good — massage, compression, elevation, all of it works for hours, none of it holds. Then I spent 2 weeks in an Adriatic fishing village where women on their feet all day into their 80s almost never get swollen legs.</p>
+          <p>Ana, 92, laughed when I asked. She told me about a sister who left the village, dropped the family remedy, and died at 68 of a "stable" heart. Then she handed me a dark jar — a blend of drainage botanicals her mother and grandmother made by hand.</p>
+          <p>Back home, it matched the research exactly: 4 plant extracts, cold-processed, the same sequence used in the clinical studies — not the heat-dried dust sold at drugstores.</p>
+          <p>Week 4: legs steady all day, resting heart rate down into the 60s. Month 2: blood pressure down 20 points.</p>
+        </div>
+        <div class="pt">
+          <p>Sou terapeuta linfática. 12 anos. Você não drena uma perna de fora pra sempre — massagem, compressão, elevação, tudo funciona por horas, nada se mantém. Aí passei 2 semanas numa vila de pescadores no Adriático, onde mulheres em pé o dia todo até os 80 anos quase nunca têm pernas inchadas.</p>
+          <p>Ana, 92 anos, riu quando perguntei. Contou de uma irmã que saiu da vila, abandonou o remédio da família e morreu aos 68 com o coração "estável". Depois me entregou um pote escuro — uma mistura de botânicos de drenagem que a mãe e a avó dela faziam à mão.</p>
+          <p>De volta pra casa, batia exatamente com a pesquisa: 4 extratos vegetais, processados a frio, na mesma sequência dos estudos clínicos — nada a ver com o pó ressecado vendido em farmácia.</p>
+          <p>Semana 4: pernas estáveis o dia todo, frequência cardíaca de repouso caiu pra faixa dos 60. Mês 2: pressão caiu 20 pontos.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><b>AD09</b></div>
+      <img class="creative" src="imagem/AD09.jpg" alt="AD09">
+      <div class="copy-controls">
+        <button type="button" class="copy-btn" data-copy><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span data-label>Copiar</span></button>
+        <div class="lang-toggle" data-toggle><button type="button" class="active" data-lang="en">EN</button><button type="button" data-lang="pt">PT</button></div>
+      </div>
+      <div class="ptext" data-lang="en">
+        <div class="en">
+          <p>My older sister couldn't sleep because of her legs. A heart attack took her last winter. She was 64. I have the same problem — legs so heavy and restless at night I can't get comfortable, same water pill, same "your numbers look fine."</p>
+          <p>What I found: heavy, restless legs at night are often fluid pooling because the drainage system runs slow, and lying down it has nowhere to go. The sleep problem, the swelling, and the creeping pressure were never three separate problems — one system failing quietly.</p>
+          <p>A 30-second morning ritual — 4 plant extracts under the tongue that support the drainage instead of just offloading the blood.</p>
+          <p>Week 4: sleeping 6.5 hours, no waterlogged heaviness. Month 2: 126/80, doctor held the second pill and the workup.</p>
+        </div>
+        <div class="pt">
+          <p>Minha irmã mais velha não conseguia dormir por causa das pernas. Um infarto a levou no inverno passado. Ela tinha 64 anos. Eu tenho o mesmo problema — pernas tão pesadas e inquietas à noite que não consigo ficar confortável, mesmo diurético, mesmo "seus exames estão bons".</p>
+          <p>O que descobri: pernas pesadas e inquietas à noite costumam ser fluido acumulado porque o sistema de drenagem está lento, e deitada, ele não tem pra onde ir. O problema do sono, o inchaço e a pressão subindo nunca foram três problemas separados — um único sistema falhando silenciosamente.</p>
+          <p>Um ritual matinal de 30 segundos — 4 extratos vegetais sob a língua que sustentam a drenagem em vez de só descarregar o sangue.</p>
+          <p>Semana 4: dormindo 6h30, sem aquela pesadeira encharcada. Mês 2: 126/80, a médica segurou o segundo comprimido e a bateria de exames.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><b>AD10</b></div>
+      <img class="creative" src="imagem/AD10.jpg" alt="AD10">
+      <div class="copy-controls">
+        <button type="button" class="copy-btn" data-copy><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span data-label>Copiar</span></button>
+        <div class="lang-toggle" data-toggle><button type="button" class="active" data-lang="en">EN</button><button type="button" data-lang="pt">PT</button></div>
+      </div>
+      <div class="ptext" data-lang="en">
+        <div class="en">
+          <p>My older sister had swollen legs and puffy hands for years. Her kidneys failed at 60. She spent her last two years on dialysis. She died at 62. I have the same swelling, same daily water pill, same "your labs are basically fine."</p>
+          <p>Chronic swelling is the body telling you the drainage has slowed. A water pill forces the kidneys to dump water over and over — for some women, that pressure is exactly what wears the kidneys down.</p>
+          <p>I found a gentler path: 4 plant extracts under the tongue that support the drainage itself, no forcing, no all-night bathroom trips, no extra strain on the kidneys.</p>
+          <p>Month 2: labs held steady, doctor held the second pill — "gentle is better for your kidneys anyway." I'm off dialysis. Susan is not.</p>
+        </div>
+        <div class="pt">
+          <p>Minha irmã mais velha teve pernas inchadas e mãos inchadas por anos. Os rins dela falharam aos 60. Passou os últimos dois anos em diálise. Morreu aos 62. Eu tenho o mesmo inchaço, o mesmo diurético diário, o mesmo "seus exames estão basicamente normais".</p>
+          <p>Inchaço crônico é o corpo avisando que a drenagem está lenta. Um diurético força os rins a eliminar água repetidamente — em algumas mulheres, é exatamente essa pressão que desgasta os rins.</p>
+          <p>Encontrei um caminho mais suave: 4 extratos vegetais sob a língua que sustentam a própria drenagem, sem forçar, sem idas ao banheiro a noite toda, sem sobrecarregar os rins.</p>
+          <p>Mês 2: exames estáveis, a médica segurou o segundo comprimido — "suave é melhor pros seus rins de qualquer forma." Estou fora da diálise. A Susan não está.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Linfaflow · 10 ads em imagem · AD03 é o texto vencedor (P1) · <a href="index.html" style="color:inherit">voltar ao menu</a></footer>
+</div>
+
+<script>
+  document.querySelectorAll('[data-toggle]').forEach(function(toggle){
+    var card = toggle.closest('.card');
+    var body = card.querySelector('.ptext');
+    toggle.querySelectorAll('button').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        body.setAttribute('data-lang', btn.getAttribute('data-lang'));
+        toggle.querySelectorAll('button').forEach(function(b){ b.classList.toggle('active', b===btn); });
+      });
+    });
+  });
+  document.querySelectorAll('[data-copy]').forEach(function(copyBtn){
+    var card = copyBtn.closest('.card');
+    var body = card.querySelector('.ptext');
+    var label = copyBtn.querySelector('[data-label]');
+    copyBtn.addEventListener('click', function(){
+      var lang = body.getAttribute('data-lang') || 'en';
+      var block = body.querySelector('.' + lang);
+      var text = Array.prototype.map.call(block.querySelectorAll('p'), function(p){ return p.innerText.trim(); }).join('\n\n');
+      var done = function(){
+        copyBtn.classList.add('done');
+        var prev = label.textContent;
+        label.textContent = 'Copiado!';
+        setTimeout(function(){ copyBtn.classList.remove('done'); label.textContent = prev; }, 1600);
+      };
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(done).catch(function(){ fallbackCopy(text, done); });
+      } else { fallbackCopy(text, done); }
+    });
+  });
+  function fallbackCopy(text, done){
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.focus(); ta.select();
+    try{ document.execCommand('copy'); done(); }catch(e){}
+    document.body.removeChild(ta);
+  }
+</script>

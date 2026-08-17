@@ -1,0 +1,343 @@
+<title>SlimSoda — Ads em Imagem</title>
+<style>
+  :root{
+    --paper: #EEEBE3; --paper-raised: #FAF8F3; --paper-sunken: #E4E0D6;
+    --ink: #211E1A; --ink-soft: #55504A; --ink-faint: #8A8478;
+    --accent: #C85A2E; --gold: #9C6B1F; --good: #3C6E4A;
+    --line: rgba(33,30,26,0.14); --line-strong: rgba(33,30,26,0.26);
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#17181A; --paper-raised:#1F2023; --paper-sunken:#131415;
+      --ink:#ECE9E2; --ink-soft:#A8A39A; --ink-faint:#726C63;
+      --accent:#E0834F; --gold:#D9A34E; --good:#6FAF80;
+      --line:rgba(236,233,226,0.14); --line-strong:rgba(236,233,226,0.24);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#17181A; --paper-raised:#1F2023; --paper-sunken:#131415;
+    --ink:#ECE9E2; --ink-soft:#A8A39A; --ink-faint:#726C63;
+    --accent:#E0834F; --gold:#D9A34E; --good:#6FAF80;
+    --line:rgba(236,233,226,0.14); --line-strong:rgba(236,233,226,0.24);
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  .wrap{ max-width:920px; margin:0 auto; padding:40px 24px 100px; }
+
+  .topbar{ display:flex; align-items:center; justify-content:space-between; margin:0 0 36px; }
+  .back{ font-family:var(--mono); font-size:12px; text-decoration:none; color:var(--ink-soft); border:1px solid var(--line-strong); border-radius:99px; padding:7px 14px; }
+  .back:hover{ border-color:var(--accent); color:var(--accent); }
+  .doc-title{ font-family:var(--serif); font-weight:600; font-size:28px; margin:0; }
+
+  .grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:24px; }
+
+  .card{ border:1px solid var(--line-strong); border-radius:8px; background:var(--paper-raised); overflow:hidden; }
+  .card-head{ display:flex; align-items:center; justify-content:space-between; padding:12px 16px; background:var(--paper-sunken); border-bottom:1px solid var(--line); }
+  .card-head b{ font-family:var(--mono); font-size:12.5px; }
+  .card-head span{ font-family:var(--mono); font-size:10px; color:var(--ink-faint); }
+  img.creative{ width:100%; aspect-ratio:3/4; object-fit:contain; display:block; background:var(--paper-sunken); }
+
+  .copy-controls{ display:flex; align-items:center; justify-content:space-between; gap:8px; padding:10px 16px; border-bottom:1px solid var(--line); }
+  .copy-btn{ font-family:var(--mono); font-size:11px; border:1px solid var(--line-strong); background:var(--paper-raised); color:var(--ink-soft); border-radius:99px; padding:6px 12px; cursor:pointer; display:inline-flex; align-items:center; gap:6px; }
+  .copy-btn:hover{ background:var(--accent); color:#fff; border-color:var(--accent); }
+  .copy-btn.done{ background:var(--good); color:#fff; border-color:var(--good); }
+  .copy-btn svg{ width:12px; height:12px; }
+  .lang-toggle{ font-family:var(--mono); font-size:11px; border:1px solid var(--line-strong); border-radius:99px; padding:4px 5px; display:flex; gap:2px; }
+  .lang-toggle button{ font-family:var(--mono); font-size:10.5px; border:0; background:transparent; color:var(--ink-faint); border-radius:99px; padding:3px 9px; cursor:pointer; }
+  .lang-toggle button.active{ background:var(--accent); color:#fff; }
+
+  .ptext{ padding:14px 16px; font-family:var(--mono); font-size:12px; line-height:1.7; max-height:220px; overflow-y:auto; }
+  .ptext p{ margin:0 0 9px; }
+  .ptext p:last-child{ margin-bottom:0; }
+  .ptext[data-lang="en"] .pt{ display:none; }
+  .ptext[data-lang="pt"] .en{ display:none; }
+
+  footer{ margin-top:56px; padding-top:20px; border-top:1px solid var(--line); font-size:12px; color:var(--ink-faint); font-family:var(--mono); text-align:center; }
+</style>
+
+<div class="wrap">
+  <div class="topbar">
+    <h1 class="doc-title">🖼️ Ads em Imagem</h1>
+    <a class="back" href="index.html">← Menu</a>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-head"><b>AD01</b><span>ADV1</span></div>
+      <img class="creative" src="imagem/AD01.png" alt="AD01">
+      <div class="copy-controls">
+        <button type="button" class="copy-btn" data-copy><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span data-label>Copiar</span></button>
+        <div class="lang-toggle" data-toggle><button type="button" class="active" data-lang="en">EN</button><button type="button" data-lang="pt">PT</button></div>
+      </div>
+      <div class="ptext" data-lang="en">
+        <div class="en">
+          <p>If you're taking baking soda to replace Mounjaro, grab a pen and paper because you might be doing it wrong… My God, how did I not find out about this sooner…</p>
+          <p>It all started after watching my sister Sarah's routine, she's 62. She eats a bagel with cream cheese every single day and still looks the same as she did in college.</p>
+          <p>My name is Jess. I'm 59. Two kids. One day we went out to eat and she finished her plate and still ate half of mine.</p>
+          <p>That night at home, I broke down crying in the bathroom after standing in front of the mirror for half an hour trying to understand what was wrong with my body.</p>
+          <p>I grabbed my phone and sent my sister a message… Before I went to bed her message came through, just a link to an article by a woman named Dana…</p>
+          <p>It was that same baking soda trick I saw on TikTok, but I realized it's actually a 3 step process that you don't learn from a 30 second TikTok video. The baking soda was just the first step of the recipe.</p>
+          <p>By the third day, that bloated feeling was gone. By the second week, I put on a size 6 pair of jeans that had been sitting in my closet for years. They zipped up.</p>
+          <p>Now? I'm eating real food. I'm not starving myself. I'm not injecting anything.</p>
+          <p>If you're exhausted from trying so hard and you think it's because of your age or menopause… Forget that… It was never your fault.</p>
+          <p>Click the "Learn More" button below and read the article right now before it gets taken down.</p>
+        </div>
+        <div class="pt">
+          <p>Se você está tomando baking soda para substituir o Mounjaro pegue papel e caneta pois você pode estar fazendo isso errado… Meu Deus, como eu não descobri isso antes…</p>
+          <p>Tudo começou após observar a rotina da minha irmã Sarah, de 62. Ela come bagel com cream cheese todos os dias e continua com a mesma aparência desde a faculdade.</p>
+          <p>Meu nome é Jess. Tenho 59 anos. Dois filhos. Certo dia saímos para comer e ela terminava o prato dela e ainda comia metade do meu.</p>
+          <p>À noite em casa, desabei a chorar no banheiro depois de ficar meia hora parada no espelho tentando entender o que havia de errado com meu corpo.</p>
+          <p>Peguei meu celular e enviei uma mensagem para minha irmã… Antes de ir deitar chegou a mensagem, apenas um link de um artigo de uma mulher chamada Dana…</p>
+          <p>Era o bendito truque do bicarbonato de sódio que vi no tiktok, mas percebi que se trata de um processo de 3 etapas que não se aprende em um vídeo de 30 segundos. O baking soda era apenas a primeira etapa da receita.</p>
+          <p>No terceiro dia, aquela sensação de estufamento tinha ido embora. Na segunda semana, vesti uma calça jeans tamanho 6 que estava guardada no armário há anos. Ela fechou.</p>
+          <p>Agora? Estou comendo comida de verdade. Não estou passando fome. Não estou injetando nada.</p>
+          <p>Se você está exausta de se esforçar tanto e acha que é por conta da idade ou menopausa… Esquece isso… A culpa nunca foi sua.</p>
+          <p>Clique no botão "Saiba Mais" abaixo e leia o artigo agora mesmo antes que ele saia do ar.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><b>AD02</b><span>ADV1</span></div>
+      <img class="creative" src="imagem/AD02.png" alt="AD02">
+      <div class="copy-controls">
+        <button type="button" class="copy-btn" data-copy><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span data-label>Copiar</span></button>
+        <div class="lang-toggle" data-toggle><button type="button" class="active" data-lang="en">EN</button><button type="button" data-lang="pt">PT</button></div>
+      </div>
+      <div class="ptext" data-lang="en">
+        <div class="en">
+          <p>Seriously! If you use baking soda at home with these other two ingredients and don't lose at least 4 pounds a day, something is off.</p>
+          <p>I spent 25 years putting everyone else first. And somewhere between my second kid and my 44th birthday, I looked in the mirror and didn't recognize myself.</p>
+          <p>I didn't want anyone to see my body. Not even myself. The worst part? I wasn't even eating badly.</p>
+          <p>Then, the day I got the wedding invite from my sister, she sent me an article about the "baking soda trick" that people were talking about in Facebook groups.</p>
+          <p>The wedding was 6 months away and I did the recipe every single morning. On the fourth day, my fupa went down two inches. Unbelievable.</p>
+          <p>By the second week, my husband saw me in the shower and said, you look beautiful! Even the sex got better.</p>
+          <p>If you're reading this and you feel like you've been invisible in your own life. Do the baking soda trick today and come back here skinnier and thank me later.</p>
+          <p>Click the button below before the article gets taken down.</p>
+        </div>
+        <div class="pt">
+          <p>Sério! Se você usar baking soda em casa e esses outros dois ingredientes e não perder pelo menos 4 pounds por dia, tem algo de errado.</p>
+          <p>Passei 25 anos colocando todo mundo em primeiro lugar. E, em algum momento entre o segundo filho e o meu aniversário de 44 anos, olhei no espelho e não me reconheci.</p>
+          <p>Eu não queria que ninguém visse o meu corpo. Nem eu mesma. A pior parte? Eu não estava comendo mal.</p>
+          <p>Então, no dia que recebi o convite de casamento da minha irmã, ela me mandou um artigo do "truque do bicarbonato" que estavam falando nos grupos do facebook.</p>
+          <p>Faltavam 6 meses para o casamento e eu fiz a receita todas as manhãs. No quarto dia, minha fupa desinchou duas polegadas. Incrível.</p>
+          <p>Na segunda semana, meu marido me viu no banho e disse: você está linda! Até o sexo melhorou.</p>
+          <p>Se você está lendo isto e sente que tem sido invisível na sua própria vida. Faça o truque do bicarbonato de sódio hoje mesmo e retorne aqui mais magra e me agradeça depois.</p>
+          <p>Clique no botão abaixo antes que o artigo saia do ar.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><b>AD03</b><span>ADV2</span></div>
+      <img class="creative" src="imagem/AD03.png" alt="AD03">
+      <div class="copy-controls">
+        <button type="button" class="copy-btn" data-copy><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span data-label>Copiar</span></button>
+        <div class="lang-toggle" data-toggle><button type="button" class="active" data-lang="en">EN</button><button type="button" data-lang="pt">PT</button></div>
+      </div>
+      <div class="ptext" data-lang="en">
+        <div class="en">
+          <p>At 140 lbs she was humiliated on the roller coaster until she lost 42 lbs with this 30 second trick at home. My name is Danielle McGill, 36 years old.</p>
+          <p>I was told I was "too big" to ride the roller coaster, the same ride my dad and I used to go on together before he passed away…</p>
+          <p>I ate when I was sad. Five thousand, sometimes ten thousand calories a day. I stopped leaving the house.</p>
+          <p>The day I fell apart, I took my kids to the amusement park. I didn't fit in the seat. "I'm sorry, ma'am. You're too big."</p>
+          <p>That's when a friend sent me a short article about a natural three step recipe for making the baking soda water shot at home.</p>
+          <p>The first two weeks, I didn't even weigh myself. But I noticed my double chin was shrinking. Over time, 42 pounds total.</p>
+          <p>What matters is the day I took my kids back to that amusement park. The same ride. Only this time, I fit.</p>
+          <p>Don't wait until your kids have to watch you get turned away from something you love. Click the button below and learn the baking soda water shot the right way.</p>
+        </div>
+        <div class="pt">
+          <p>Com 140 lbs ela foi humilhada na montanha-russa até perder 42 lbs com esse truque de 30 segundos em casa. Meu nome é Danielle McGill, 36 anos.</p>
+          <p>Me disseram que eu estava "grande demais" para ir na montanha-russa, o mesmo brinquedo que meu pai e eu costumávamos ir juntos antes de ele falecer…</p>
+          <p>Eu comia quando estava triste. Cinco mil, às vezes dez mil calorias por dia. Parei de sair de casa.</p>
+          <p>No dia em que desmoronei, levei meus filhos ao parque de diversões. Eu não cabia no assento. "Sinto muito, senhora. A senhora está muito grande."</p>
+          <p>Foi então que uma amiga me enviou um artigo curto sobre uma receita natural de três passos para fazer o shot de água com bicarbonato em casa.</p>
+          <p>Nas duas primeiras semanas, nem sequer me pesei. Mas percebi que minha papada estava diminuindo. Com o tempo, 42 libras no total.</p>
+          <p>O que importa é o dia em que levei meus filhos de volta àquele parque de diversões. O mesmo brinquedo. Só que, dessa vez, eu cabia.</p>
+          <p>Não espere até que seus filhos tenham que ver você ser impedida de participar de algo que ama. Clique no botão abaixo e aprenda o shot de água com bicarbonato de sódio do jeito certo.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><b>AD04</b><span>ADV2</span></div>
+      <img class="creative" src="imagem/AD04.png" alt="AD04">
+      <div class="copy-controls">
+        <button type="button" class="copy-btn" data-copy><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span data-label>Copiar</span></button>
+        <div class="lang-toggle" data-toggle><button type="button" class="active" data-lang="en">EN</button><button type="button" data-lang="pt">PT</button></div>
+      </div>
+      <div class="ptext" data-lang="en">
+        <div class="en">
+          <p>This is going to sound crazy, but please hear me out. I need to warn you about the baking soda trick. Not because it doesn't work. Because it works too fast.</p>
+          <p>I'm 34. My wedding was four months away. The zipper wouldn't close at the first fitting.</p>
+          <p>I went on a crash diet, lost 4 pounds, and my body just stalled. My mom suggested the injections, 1,200 dollars a month. I quit after three weeks.</p>
+          <p>My maid of honor sent me an article about a baking soda trick. One measured amount mixed in water every morning with two other ingredients in the right ratio.</p>
+          <p>By the seventh day I had already lost 2.2 lbs. By the fifth week the zipper closed. My fiancé said, "You look like the version of you that said yes when I proposed."</p>
+          <p>P.S. I lost over 33 lbs before the wedding. I didn't starve, I didn't pay 1,200 a month to anyone. It works faster than you think.</p>
+        </div>
+        <div class="pt">
+          <p>Isso vai parecer loucura, mas por favor me escuta. Eu preciso te avisar sobre o truque do bicarbonato. Não porque não funciona. Porque funciona rápido demais.</p>
+          <p>Tenho 34 anos. Meu casamento era em quatro meses. O zíper não fechou na primeira prova.</p>
+          <p>Fiz dieta radical, perdi 1,8 kg e o corpo travou. Minha mãe sugeriu as injeções, 1.200 dólares por mês. Parei em três semanas.</p>
+          <p>Minha madrinha me mandou um artigo sobre um truque com bicarbonato de sódio. Uma medida diluída em água toda manhã com outros dois ingredientes na proporção correta.</p>
+          <p>No sétimo dia já tinha perdido 2.2 lbs. Na quinta semana o zíper fechou. Meu noivo disse: "Você parece aquela versão de você que disse sim quando eu pedi em casamento."</p>
+          <p>P.S. Perdi mais de 15 kg antes do casamento. Não passei fome, não paguei 1.200 por mês pra ninguém. Funciona mais rápido do que você imagina.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><b>AD05</b><span>ADV3</span></div>
+      <img class="creative" src="imagem/AD05.png" alt="AD05">
+      <div class="copy-controls">
+        <button type="button" class="copy-btn" data-copy><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span data-label>Copiar</span></button>
+        <div class="lang-toggle" data-toggle><button type="button" class="active" data-lang="en">EN</button><button type="button" data-lang="pt">PT</button></div>
+      </div>
+      <div class="ptext" data-lang="en">
+        <div class="en">
+          <p>If you're crushing your husband in bed and he's not saying a word. Do this baking soda trick every day and thank me.</p>
+          <p>At 211 pounds, I couldn't shave. I couldn't clean myself properly after going to the bathroom. I'm 52. I went through menopause at 48 and my body just shut down.</p>
+          <p>I tried everything there is. Even GLP-1 for 4 months. I lost 19 pounds and gained back 22 when I stopped.</p>
+          <p>Then a coworker sent me an article about a woman named Dana who spent a year testing a morning ritual with baking soda and two other ingredients.</p>
+          <p>Before I even hit two months I had already lost 46 pounds. And at night, for the first time in a long time, I was the one who pulled James into bed. No fear. No shame.</p>
+          <p>I'm sharing this because I know what it's like to improvise in the bathroom and die of embarrassment in silence. Click the button below before it's too late!</p>
+        </div>
+        <div class="pt">
+          <p>Se você esmaga seu marido na cama e ele não fala nada. Faça esse truque do bicarbonato de sódio todos os dias e me agradeça.</p>
+          <p>Com 211 pounds, eu não conseguia me depilar. Não conseguia me limpar direito depois de ir ao banheiro. Tenho 52 anos. Passei pela menopausa aos 48 e meu corpo simplesmente travou.</p>
+          <p>Tentei tudo que existe. Até GLP-1 por 4 meses. Emagreci 19 pounds e voltei 22 pounds quando parei.</p>
+          <p>Aí uma colega de trabalho me mandou um artigo sobre uma mulher chamada Dana que passou um ano testando um ritual matinal com bicarbonato de sódio e outros dois ingredientes.</p>
+          <p>Antes de completar dois meses eu já tinha perdido 46 pounds. E à noite, pela primeira vez em muito tempo, fui EU que puxei o James pra cama. Sem medo. Sem vergonha.</p>
+          <p>Tô compartilhando porque sei o que é improvisar no banheiro e morrer de vergonha em silêncio. Clique no botão abaixo antes que seja tarde!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><b>AD06</b><span>ADV3</span></div>
+      <img class="creative" src="imagem/AD06.png" alt="AD06">
+      <div class="copy-controls">
+        <button type="button" class="copy-btn" data-copy><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span data-label>Copiar</span></button>
+        <div class="lang-toggle" data-toggle><button type="button" class="active" data-lang="en">EN</button><button type="button" data-lang="pt">PT</button></div>
+      </div>
+      <div class="ptext" data-lang="en">
+        <div class="en">
+          <p>Warning to all women, never use this baking soda trick more than once a day if you don't want to replace your entire wardrobe.</p>
+          <p>I've been fighting my weight for 9 years. I'm 49. My nutritionist told me my metabolism was "consistent with my age and hormonal history." I was only 49. I wasn't dead.</p>
+          <p>I overheard her telling a colleague: "Five weeks. I lost 11 pounds. The bloating in my belly is completely gone." She never told me about it.</p>
+          <p>It works on the gut cells themselves. Not on hunger. Not on calories. On the cells. A kitchen recipe with three ingredients, in the right order, in the right ratio.</p>
+          <p>By the end of the first week I lost 4 pounds. I lost 14 pounds and I'm in every single photo we took this summer.</p>
+          <p>P.S. My mom is 70 years old and today she's back wearing a bikini at water aerobics.</p>
+        </div>
+        <div class="pt">
+          <p>Aviso para as mulheres, nunca use esse truque do bicarbonato de sódio mais de uma vez por dia se você não quer trocar todo o seu guarda roupas.</p>
+          <p>Eu luto contra o peso há 9 anos. Tenho 49 anos. Minha nutricionista disse que meu metabolismo era "compatível com a minha idade e o meu histórico hormonal". Eu tinha apenas 49 anos. Não estava morta.</p>
+          <p>Ouvi ela contando pra uma colega: "Cinco semanas. Emagreci 11 pounds. Perdi o inchaço inteiro da barriga." Ela nunca tinha me contado isso.</p>
+          <p>Age nas células do intestino em si. Não na fome. Não nas calorias. Nas células. Uma receita de cozinha com três ingredientes, na ordem certa, na proporção certa.</p>
+          <p>No final da primeira semana emagreci 4 pounds. Perdi 14 libras e estou em todas as fotos que tiramos no verão.</p>
+          <p>P.S. Minha mãe tem 70 anos e hoje ela voltou a usar biquíni na hidroginástica.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><b>AD07</b><span>ADV4</span></div>
+      <img class="creative" src="imagem/AD07.png" alt="AD07">
+      <div class="copy-controls">
+        <button type="button" class="copy-btn" data-copy><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span data-label>Copiar</span></button>
+        <div class="lang-toggle" data-toggle><button type="button" class="active" data-lang="en">EN</button><button type="button" data-lang="pt">PT</button></div>
+      </div>
+      <div class="ptext" data-lang="en">
+        <div class="en">
+          <p>Seriously, if this morning ritual with baking soda doesn't unlock your metabolism, nothing in this world will!</p>
+          <p>My husband never told me I was fat. He didn't have to. All it took was seeing him look away when I got undressed. I'm 54, and my body completely changed after menopause.</p>
+          <p>My sister in law sent me a link to an article about a woman named Dana, who had developed a morning ritual using baking soda — but the version everyone copies online is incomplete. Two essential steps are missing.</p>
+          <p>By day 30, I had dropped almost 15 pounds. Owen saw me getting out of the shower and said, "Wow, you look different." He really looked at me.</p>
+          <p>My endocrinologist said the inflammation markers in my blood had improved in a way she rarely saw without medication.</p>
+          <p>Read it before they take it down. Tap the link below, and if it's still available, consider it your lucky day.</p>
+        </div>
+        <div class="pt">
+          <p>Sério, se esse ritual matinal com bicarbonato não destravar o seu metabolismo, nada nesse mundo vai!</p>
+          <p>Meu marido nunca me disse que eu estava gorda. Ele não precisou. Bastou eu ver ele desviando o olhar quando eu tirava a roupa. Tenho 54 anos, e meu corpo mudou completamente depois da menopausa.</p>
+          <p>Minha cunhada me mandou um link de um artigo sobre uma mulher chamada Dana, que desenvolveu um ritual matinal usando bicarbonato — mas a versão que todo mundo copia na internet está incompleta. Faltam duas etapas essenciais.</p>
+          <p>No dia 30, eu tinha eliminado quase 15 pounds. O Owen me viu saindo do banho e disse: "Nossa, você tá diferente." Me olhou de verdade.</p>
+          <p>Minha endocrinologista disse que os marcadores de inflamação no meu sangue tinham melhorado de um jeito que ela raramente via sem medicação.</p>
+          <p>Leia antes que tirem do ar. Toque no link abaixo, e se ainda estiver disponível, considere que é o seu dia de sorte.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><b>AD08</b><span>ADV4</span></div>
+      <img class="creative" src="imagem/AD08.png" alt="AD08">
+      <div class="copy-controls">
+        <button type="button" class="copy-btn" data-copy><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span data-label>Copiar</span></button>
+        <div class="lang-toggle" data-toggle><button type="button" class="active" data-lang="en">EN</button><button type="button" data-lang="pt">PT</button></div>
+      </div>
+      <div class="ptext" data-lang="en">
+        <div class="en">
+          <p>My wife gained 29 pounds after GLP-1 and I lost my attraction to her. Period. Do this baking soda ritual every morning and see what happens to your body in 30 days.</p>
+          <p>My wife got on GLP-1. She lost 26 pounds. Quit because her body couldn't handle the nausea. And in 4 months, it all came back. With interest. 33 extra pounds.</p>
+          <p>Then I found an article about a woman named Dana who spent an entire year testing a ritual with baking soda. Two steps are missing that nobody shows in a 30 second video. I sent the link to my wife.</p>
+          <p>Day 4, no bloating. Day 12, jeans zipped, minus 7 pounds. Day 28, minus 17 pounds. Day 60, minus 33 pounds. I bought lingerie for the first time in 4 years.</p>
+          <p>I spent 5 thousand dollars on GLP-1, a nutritionist, a personal trainer. Nothing stuck. I was a fool.</p>
+          <p>Women who used GLP-1 and had the rebound effect respond even faster. Click the button below before the link gets taken down.</p>
+        </div>
+        <div class="pt">
+          <p>Minha esposa engordou 29 libras depois do GLP-1 e eu perdi a atração por ela. Ponto. Faça esse ritual do bicarbonato toda manhã e veja o que acontece com seu corpo em 30 dias.</p>
+          <p>Minha esposa entrou no GLP-1. Perdeu 26 pounds. Parou porque o corpo não aguentava a náusea. E em 4 meses, voltou tudo. Com juros. 33 libras a mais.</p>
+          <p>Aí eu achei um artigo sobre uma mulher chamada Dana que gastou um ano inteiro testando um ritual com bicarbonato de sódio. Faltam duas etapas que ninguém mostra num vídeo de 30 segundos. Mandei o link pra minha esposa.</p>
+          <p>Dia 4, sem inchaço. Dia 12, calça fechou, menos 7 pounds. Dia 28, menos 17 pounds. Dia 60, menos 33 pounds. Comprei lingerie pela primeira vez em 4 anos.</p>
+          <p>Gastei 5 mil dólares em GLP-1, nutricionista, personal. Nada segurou. Eu fui trouxa.</p>
+          <p>Mulheres que usaram GLP-1 e tiveram o efeito rebote respondem ainda mais rápido. Clique no botão abaixo antes que o link saia do ar.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>SlimSoda · 8 ads em imagem · <a href="index.html" style="color:inherit">voltar ao menu</a></footer>
+</div>
+
+<script>
+  document.querySelectorAll('[data-toggle]').forEach(function(toggle){
+    var card = toggle.closest('.card');
+    var body = card.querySelector('.ptext');
+    toggle.querySelectorAll('button').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        body.setAttribute('data-lang', btn.getAttribute('data-lang'));
+        toggle.querySelectorAll('button').forEach(function(b){ b.classList.toggle('active', b===btn); });
+      });
+    });
+  });
+  document.querySelectorAll('[data-copy]').forEach(function(copyBtn){
+    var card = copyBtn.closest('.card');
+    var body = card.querySelector('.ptext');
+    var label = copyBtn.querySelector('[data-label]');
+    copyBtn.addEventListener('click', function(){
+      var lang = body.getAttribute('data-lang') || 'en';
+      var block = body.querySelector('.' + lang);
+      var text = Array.prototype.map.call(block.querySelectorAll('p'), function(p){ return p.innerText.trim(); }).join('\n\n');
+      var done = function(){
+        copyBtn.classList.add('done');
+        var prev = label.textContent;
+        label.textContent = 'Copiado!';
+        setTimeout(function(){ copyBtn.classList.remove('done'); label.textContent = prev; }, 1600);
+      };
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(done).catch(function(){ fallbackCopy(text, done); });
+      } else { fallbackCopy(text, done); }
+    });
+  });
+  function fallbackCopy(text, done){
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.focus(); ta.select();
+    try{ document.execCommand('copy'); done(); }catch(e){}
+    document.body.removeChild(ta);
+  }
+</script>
